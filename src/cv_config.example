@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "profession": "",
+  "profile_pic": "./assets/profile.jpg",
+  "contacts": {
+    "email": "",
+    "telephone": "",
+    "website": ""
+  }
+}
