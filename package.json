@@ -4,13 +4,15 @@
   "description": "Build a CV from a json file",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run webpack-dev & npm run tailwind-dev",
+    "dev": "npm run webpack-dev & npm run tailwind-dev & NODE_ENV=dev node index.js",
     "tailwind-dev": "tailwindcss -i ./src/input.css -o ./build/style.css --watch",
-    "webpack-dev": "webpack --watch",
-    "tailwind-build": "tailwindcss -i ./src/input.css -o ./build/style.css",
-    "webpack-build": "webpack",
+    "webpack-dev": "webpack --config webpack.dev.js --watch",
+    "tailwind-build": "tailwindcss -i ./src/input.css -o ./build/style.css --minify",
+    "webpack-build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run tailwind-build & npm run webpack-build"
+    "build": "npm run tailwind-build && npm run webpack-build",
+    "convert": "NODE_ENV=prod node index.js",
+    "build-convert": "npm run build && npm run convert"
   },
   "keywords": [
     "cv",
@@ -26,6 +28,8 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "puppeteer": "^18.0.5",
+    "webpack-merge": "^5.8.0"
   }
 }
