@@ -4,3 +4,5 @@ cv_config.json
 build/main.js
 build/style.css
 build/profile.jpg
+
+src/assets/profile.jpg

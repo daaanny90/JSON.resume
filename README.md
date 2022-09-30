@@ -15,6 +15,8 @@ No more diving into the computer folders to find an old version of the cv and th
 ## 🔨 How to use it
 Under `/src` rename `cv_config.json.example` in `cv_config.json` and fill in the information. I suppose you know how to write a JSON file.
 
+Then add your profile image under `/src/assets` with the name `profile.jpg`.
+
 ### 👉 Development
 Now you can start the tool in development mode, to check your CV and make the changes you want. Just run
 ```
