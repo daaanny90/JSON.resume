@@ -3,7 +3,7 @@ import { CvComponent } from "@/utils/CvComponent";
 export class ProfilePic extends CvComponent {
   render() {
     return `
-      <img class="self-end ml-auto max-h-60 max-w-[200px] shadow rounded-full" src="./profile.jpg" alt="" />
+      <img class="mx-auto max-h-60 max-w-[200px] shadow rounded-full mb-5" src="./profile.jpg" alt="" />
     `;
   }
 }

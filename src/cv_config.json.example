@@ -6,5 +6,15 @@
     "email": "",
     "telephone": "",
     "website": ""
-  }
+  },
+  "experiences": [
+    {
+      "title": "",
+      "type": "",
+      "company": "",
+      "from": "",
+      "to": "",
+      "summary": "."
+    }
+  ]
 }

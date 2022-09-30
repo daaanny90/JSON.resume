@@ -11,7 +11,7 @@ export class SectionTitle extends CvComponent {
   
   render() {
     return `
-      <h4 class="text-2xl py-3 w-full border-b-2 border-slate-500">${this.props.title}</h4>
+      <h4 class="text-3xl py-3 w-full">${this.props.title}</h4>
     `;
   }
 }
