@@ -6,7 +6,8 @@ export type CvConfig = {
     telephone: string;
     website: string;
   },
-  experiences: Array<JobExperience>
+  sections: Array<string>;
+  experiences: Array<JobExperience>;
 }
 
 export type JobExperience = {
