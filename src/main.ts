@@ -7,7 +7,7 @@ if (!cv) {
   throw new Error("Main CV container is undefined");
 }
 
-const components = [new Sidebar(), new Body()];
+const components = [ new Body() ];
 
 components.forEach((el, i) => {
   const fragment = document.createRange().createContextualFragment(el.render());

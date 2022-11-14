@@ -4,6 +4,7 @@ import { Subtitle } from "./subtitle";
 import { SectionSummary } from "./sectionSummary";
 import { SectionExperiences } from "./sectionExperiences";
 import { NewSidebar } from "./newSidebar";
+import { Header } from "./header";
 
 export class Body extends CvComponent {
   // render() {
@@ -43,7 +44,7 @@ export class Body extends CvComponent {
         <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
           <div class="py-4">
-            <div class="h-96 rounded-lg border-4 border-dashed border-gray-200"></div>
+            ${new Header().render()}
           </div>
           <!-- /End replace -->
         </div>
