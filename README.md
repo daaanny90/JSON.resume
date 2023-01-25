@@ -1,40 +1,70 @@
-# JSON.Resume()
+# Getting Started with Create React App
 
-Little app to manage the resume. It can be generated and updated by a JSON file.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-I wrote it in a day, in a kind of "stream of consciousness", and in the process, I build a framework that reminds me React :D.
+## Available Scripts
 
-## ❓Why
-Why do I build a framework from scratch instead of making it directly in plain HTML?
-To have fun, of course.
+In the project directory, you can run:
 
-But the reason why I wrote this tool, is because I wanted to have a cv version on GitHub, to take advantage of the versioning. I can make changes and rebuild the cv as releases. Only managing a JSON file.
-No more diving into the computer folders to find an old version of the cv and then fight against Microsoft Word or Google Documents or Pages to align that damn table.
+### `npm start`
 
----
-## 🔨 How to use it
-Under `/src` rename `cv_config.json.example` in `cv_config.json` and fill in the information. I suppose you know how to write a JSON file.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Then add your profile image under `/src/assets` with the name `profile.jpg`.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### 👉 Development
-Now you can start the tool in development mode, to check your CV and make the changes you want. Just run
-```
-npm run dev
-```
-Now you can see your cv in the browser under port 5005 (you can change it if you want of course).
+### `npm test`
 
-### 👉 Convert to pdf
-If you are ok with your cv you can run
-```
-npm run build-convert
-```
-This command will compile and minify the js and CSS files and will convert the HTML into a pdf. Saved in the project root folder.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
----
-## 👨‍💻 TODO
-- [X] convert the HTML into pdf
-- [ ] write a complete JSON
-- [ ] work on design
-- [ ] host somewhere the HTML version
-- [ ] save a pdf version as the first release
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
