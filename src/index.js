@@ -1,28 +1,31 @@
 import ReactPDF from 'react-dom';
-import { Page, Text, Font, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import Html from 'react-pdf-html';
-import ReactDOMServer from 'react-dom/server';
-import TailwindUiTemplate from './tailwindUiTemplate';
+import { Page, Text, Document, StyleSheet, PDFViewer, View } from '@react-pdf/renderer';
+import data from './../cv_config.json';
 
-import style from './style.js';
+/**
+ * STATUS 23.03.23
+ * Back to simple basic react-pdf components. Tailwind does not work, so I have to write the style from scratch.
+ * Todos are:
+ * - Import and read the JSON config file (the way above does not work, react-pdf can not import files outside src folder, I should
+ *   find a way to put it in src or import it in a different way)
+ * - Build and style the resume with react-pdf components
+ */
+
 import './index.css';
-
-const reactComponents = (
-  <TailwindUiTemplate></TailwindUiTemplate>
-)
-
-const reactInHtml = ReactDOMServer.renderToStaticMarkup(reactComponents)
-
+console.log(data);
 
 const Quixote = () => (
   <PDFViewer width="100%" height="1000px">
   <Document author="Danny Spina">
     <Page style={styles.body}>
-      <Text style={styles.header} fixed>
+      <Text style={styles.topPage} fixed>
         ~ Created with react-pdf ~
       </Text>
 
-      <Html stylesheet={style}>{reactInHtml}</Html>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>DANNY SPINA</Text>
+        <Text style={styles.subHeader}>WEB DEVELOPER</Text>
+      </View>
       
       <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
         `${pageNumber} / ${totalPages}`
@@ -32,22 +35,35 @@ const Quixote = () => (
   </PDFViewer>
 );
 
-Font.register({
-  family: 'Oswald',
-  src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
-});
-
 const styles = StyleSheet.create({
   body: {
     paddingTop: 35,
     paddingBottom: 65,
     paddingHorizontal: 35,
+    fontFamily: 'Courier'
+  },
+  topPage: {
+    fontSize: 12,
+    color: 'grey',
+    textAlign: 'center',
+    marginBottom: '10px'
+  },
+  headerContainer: {
+    border: '2px solid black',
+    paddingTop: '20px',
+    paddingBottom: '20px',
+    width: '380px',
+    margin: '0 auto'
   },
   header: {
-    fontSize: 12,
-    marginBottom: 20,
+    fontSize: 28,
     textAlign: 'center',
-    color: 'grey',
+    marginBottom: '5px',
+    fontWeight: 700
+  },
+  subHeader: {
+    fontSize: 14,
+    textAlign: 'center'
   },
   pageNumber: {
     position: 'absolute',
