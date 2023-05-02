@@ -1,6 +1,10 @@
 import ReactPDF from 'react-dom';
 import { Page, Text, Document, StyleSheet, PDFViewer, View } from '@react-pdf/renderer';
-import data from './../cv_config.json';
+import { Informations } from './sections/informations';
+import { Summary } from './sections/summary';
+import { Experiences } from './sections/experiences';
+
+import data from './cv_config.json';
 
 /**
  * STATUS 23.03.23
@@ -11,7 +15,7 @@ import data from './../cv_config.json';
  * - Build and style the resume with react-pdf components
  */
 
-import './index.css';
+// import './index.css';
 console.log(data);
 
 const Quixote = () => (
@@ -23,9 +27,15 @@ const Quixote = () => (
       </Text>
 
       <View style={styles.headerContainer}>
-        <Text style={styles.header}>DANNY SPINA</Text>
-        <Text style={styles.subHeader}>WEB DEVELOPER</Text>
+        <Text style={styles.header}>{(data.name).toUpperCase()}</Text>
+        <Text style={styles.subHeader}>{(data.profession).toUpperCase()}</Text>
       </View>
+
+      <Informations></Informations>
+
+      <Summary></Summary>
+
+      <Experiences></Experiences>
       
       <Text style={styles.pageNumber} render={({ pageNumber, totalPages }) => (
         `${pageNumber} / ${totalPages}`
@@ -40,7 +50,7 @@ const styles = StyleSheet.create({
     paddingTop: 35,
     paddingBottom: 65,
     paddingHorizontal: 35,
-    fontFamily: 'Courier'
+    // fontFamily: 'Courier'
   },
   topPage: {
     fontSize: 12,
@@ -74,6 +84,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'grey',
   },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+  }
 });
 
 ReactPDF.render(<Quixote />, document.getElementById('root'));
