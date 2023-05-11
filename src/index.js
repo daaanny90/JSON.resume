@@ -64,9 +64,6 @@ const education = config.education.map((edu, i) => {
       <Text style={{ fontSize: 8 }}>
         From {edu.from} to {edu.to}
       </Text>
-      <Text style={{ fontSize: 8 }}>
-        @ {edu.institute}
-      </Text>
       <Text style={{ fontSize: 8 }}>{edu.company}</Text>
       <Text style={{ fontWeight: "bold", fontSize: 14 }}>{edu.title}</Text>
     </View>
@@ -78,7 +75,7 @@ const tech_skills = config.tech_skills.map((skill, i) => {
     return <Text key={j}>{sk}</Text>;
   });
   return (
-    <View key={i} wrap={false} style={{ border: "2px solid black", padding: 5, width: 120 }}>
+    <View key={i} wrap={false} style={{ border: "2px solid black", padding: 5, width: 160 }}>
       <Text style={{ fontWeight: "bold", fontSize: 14 }}>{skill.type}</Text>
       {skills}
     </View>
@@ -171,7 +168,7 @@ const Quixote = () => (
         <View style={styles.section}>{tech_skills}</View>
 
         {/* Side Projects */}
-        <Text wrap={false} style={styles.sectionHeader}>Side Projects</Text>
+        <Text style={styles.sectionHeader}>Side Projects</Text>
         {side_projects}
 
         <Text
