@@ -127,7 +127,7 @@ const Quixote = () => (
             <Text>
               Telephone:{" "}
               <Link src={"tel:" + config.contacts.telephone}>
-                config.contacts.telephone
+                {config.contacts.telephone}
               </Link>
             </Text>
             <Text>
