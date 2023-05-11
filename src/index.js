@@ -15,14 +15,6 @@ import config from "./cv_config.json";
 import JetbrainsMonoRegular from "./fonts/JetBrainsMono-Regular.ttf";
 import JetbrainsMonoBold from "./fonts/JetBrainsMono-SemiBold.ttf";
 
-/**
- * STATUS 23.03.23
- * Back to simple basic react-pdf components. Tailwind does not work, so I have to write the style from scratch.
- * Todos are:
- * - Import and read the JSON config file (the way above does not work, react-pdf can not import files outside src folder, I should
- *   find a way to put it in src or import it in a different way)
- * - Build and style the resume with react-pdf components
- */
 const social = config.contacts.social.map((social, i) => {
   return (
     <View key={i} style={{ display: "flex", flexDirection: "row" }}>
