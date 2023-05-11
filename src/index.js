@@ -64,6 +64,9 @@ const education = config.education.map((edu, i) => {
       <Text style={{ fontSize: 8 }}>
         From {edu.from} to {edu.to}
       </Text>
+      <Text style={{ fontSize: 8 }}>
+        @ {edu.institute}
+      </Text>
       <Text style={{ fontSize: 8 }}>{edu.company}</Text>
       <Text style={{ fontWeight: "bold", fontSize: 14 }}>{edu.title}</Text>
     </View>
