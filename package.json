@@ -1,6 +1,6 @@
 {
   "name": "json.resume_migration",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^3.0.3",

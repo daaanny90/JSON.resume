@@ -1,0 +1,48 @@
+{
+  "name": "",
+  "summary": "",
+  "profession": "",
+  "contacts": {
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "social": [
+      {
+        "social": "",
+        "username": "",
+        "url": ""
+      }
+    ]
+  },
+  "experiences": [
+    {
+      "title": "",
+      "type": "",
+      "company": "",
+      "from": "",
+      "to": "",
+      "summary": ""
+    }
+  ],
+  "education": [
+    {
+      "institute": "",
+      "from": "",
+      "to": "",
+      "title": ""
+    }
+  ],
+  "tech_skills": [
+    {
+      "type": "",
+      "skills": []
+    }
+  ],
+  "side_projects": [
+    {
+      "title": "",
+      "description": "",
+      "url": ""
+    }
+  ]
+}

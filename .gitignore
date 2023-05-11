@@ -5,4 +5,6 @@ build/main.js
 build/style.css
 build/profile.jpg
 
-src/assets/profile.jpg
+.DS_Store
+
+public/profile.jpg
