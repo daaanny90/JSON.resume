@@ -23,15 +23,6 @@ jobs:
         with:
           node-version: 19.x
       
-      # node dependency cache
-      # this is not required but speeds up the process
-      - uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: node-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            node
-
       - name: Install JS deps
         uses: borales/actions-yarn@v4
         with:
