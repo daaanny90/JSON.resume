@@ -151,7 +151,7 @@ const Quixote = () => (
               Revision: {process.env.REACT_APP_VERSION}
             </Text>
           </View>
-          <Image style={styles.profilePic} src={"./profile.jpg"} />
+          <Image style={styles.profilePic} src={"/profile.jpg"} />
         </View>
 
         {/* Summary */}
