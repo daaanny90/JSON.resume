@@ -74,9 +74,7 @@
           "assets": [
             "CHANGELOG.md",
             "package.json",
-            "package-lock.json",
-            "composer.json",
-            "composer.lock"
+            "package-lock.json"
           ],
           "message": "chore(release): v${nextRelease.version} [release]"
         }
