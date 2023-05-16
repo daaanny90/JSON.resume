@@ -7,7 +7,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pdf-html": "^1.1.17",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,6 +35,7 @@
     ]
   },
   "devDependencies": {
+    "react-scripts": "5.0.1",
     "@commitlint/cli": "^17.6.3",
     "@semantic-release/changelog": "github:semantic-release/changelog",
     "@semantic-release/git": "^10.0.1",
