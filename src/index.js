@@ -107,7 +107,7 @@ const side_projects = config.side_projects.map((project) => {
 
 const Resume = () => (
   <PDFViewer width="100%" height="1000px">
-    <Document author="Danny Spina">
+    <Document author={config.name}>
       <Page style={styles.body}>
         {/* Header */}
         <View style={styles.headerContainer}>
