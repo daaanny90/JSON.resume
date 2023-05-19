@@ -1,6 +1,6 @@
 {
   "name": "json-resume",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@react-pdf/renderer": "^3.0.3",
