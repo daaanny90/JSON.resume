@@ -1,6 +1,9 @@
-# JSON.Resume()
+![JSON.resume](./public/logo.png)
 
+<br />
 Little app to manage the resume. It can be generated and updated by a JSON file.
+<br />
+<br />
 
 ## ❓Why
 The reason why I wrote this tool, is because I wanted to have a cv version on GitHub, to take advantage of the versioning. I can make changes and rebuild the cv as releases. Only managing a JSON file.
