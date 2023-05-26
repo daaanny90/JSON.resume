@@ -34,7 +34,7 @@ const Contacts = (props) => {
           </Link>
         </Text>
         <Text style={{ fontSize: 10 }}>
-          Revision: {process.env.REACT_APP_VERSION}
+          Revision: {props.revision}
         </Text>
       </View>
       <Image style={styles.profilePic} src={"/profile.jpg"} />

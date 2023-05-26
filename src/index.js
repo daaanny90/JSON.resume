@@ -28,7 +28,7 @@ const Resume = () => (
         <Header name={config.name} profession={config.profession} />
 
         <Section title="Contact Info">
-          <Contacts contacts={config.contacts} />
+          <Contacts contacts={config.contacts} revision={config.revision} />
         </Section>
 
         <Section title="Summary">
