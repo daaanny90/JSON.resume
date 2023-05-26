@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/daaanny90/JSON.resume/compare/1.1.0...1.2.0) (2023-05-26)
+
+
+### Features
+
+* **revision:** add revision in config example ([fc64e8c](https://github.com/daaanny90/JSON.resume/commit/fc64e8c05763be6a3472de6df1651b283e8bb2c9)), closes [#15](https://github.com/daaanny90/JSON.resume/issues/15)
+* **revision:** read revision version from config ([fc13111](https://github.com/daaanny90/JSON.resume/commit/fc13111a3cd964e246732616f1cda3609ba4f373)), closes [#15](https://github.com/daaanny90/JSON.resume/issues/15)
+
 # [1.1.0](https://github.com/daaanny90/JSON.resume/compare/1.0.2...1.1.0) (2023-05-19)
 
 
