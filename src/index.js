@@ -2,177 +2,54 @@ import ReactPDF from "react-dom";
 import {
   Page,
   Text,
-  Link,
   Document,
   StyleSheet,
   PDFViewer,
-  View,
-  Image,
   Font,
 } from "@react-pdf/renderer";
 import config from "./cv_config.json";
 
+import Header from "./components/Header";
+import Contacts from "./components/Contacts";
+import Experiences from "./components/Experiences";
+import Education from "./components/Education";
+import Section from "./components/Section";
+import SideProjects from "./components/SideProjects";
+import TechSkills from "./components/TechSkills";
+
 import JetbrainsMonoRegular from "./fonts/JetBrainsMono-Regular.ttf";
 import JetbrainsMonoBold from "./fonts/JetBrainsMono-SemiBold.ttf";
-
-const social = config.contacts.social.map((social, i) => {
-  return (
-    <View key={i} style={{ display: "flex", flexDirection: "row" }}>
-      <Text>
-        {social.social}: <Link src={social.url}>{social.username}</Link>
-      </Text>
-    </View>
-  );
-});
-
-const experiences = config.experiences.map((exp, i) => {
-  return (
-    <View
-      key={i}
-      wrap={false}
-      style={{
-        borderLeft: "2px solid black",
-        paddingLeft: 5,
-        width: "100%",
-        marginBottom: 15,
-      }}
-    >
-      <Text style={{ fontSize: 8 }}>
-        From {exp.from} to {exp.to}
-      </Text>
-      <Text style={{ fontSize: 8 }}>
-        @ {exp.company} - {exp.type}
-      </Text>
-      <Text style={{ fontWeight: "bold", fontSize: 14 }}>{exp.title}</Text>
-      <Text>{exp.summary}</Text>
-    </View>
-  );
-});
-
-const education = config.education.map((edu, i) => {
-  return (
-    <View
-      key={i}
-      wrap={false}
-      style={{
-        borderLeft: "2px solid black",
-        paddingLeft: 5,
-        width: "100%",
-        marginBottom: 15,
-      }}
-    >
-      <Text style={{ fontSize: 8 }}>
-        From {edu.from} to {edu.to}
-      </Text>
-      <Text style={{ fontSize: 8 }}>
-        @ {edu.institute}
-      </Text>
-      <Text style={{ fontSize: 8 }}>{edu.company}</Text>
-      <Text style={{ fontWeight: "bold", fontSize: 14 }}>{edu.title}</Text>
-    </View>
-  );
-});
-
-const tech_skills = config.tech_skills.map((skill, i) => {
-  const skills = skill.skills.map((sk, j) => {
-    return <Text key={j}>{sk}</Text>;
-  });
-  return (
-    <View key={i} wrap={false} style={{ border: "2px solid black", padding: 5, width: 160 }}>
-      <Text style={{ fontWeight: "bold", fontSize: 14 }}>{skill.type}</Text>
-      {skills}
-    </View>
-  );
-});
-
-const side_projects = config.side_projects.map((project) => {
-  return (
-    <View
-      wrap={false}
-      style={{
-        borderLeft: "2px solid black",
-        paddingLeft: 5,
-        width: "100%",
-        marginBottom: 15,
-      }}
-    >
-      <Text style={{ fontWeight: "bold", fontSize: 14 }}>{project.title}</Text>
-      <Text>{project.description}</Text>
-      <Link style={{ fontSize: 10 }} src={project.url}>
-        {project.title}
-      </Link>
-    </View>
-  );
-});
 
 const Resume = () => (
   <PDFViewer width="100%" height="1000px">
     <Document title={`${config.name} CV`} author={config.name}>
       <Page style={styles.body}>
-        {/* Header */}
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>{config.name.toUpperCase()}</Text>
-          <Text style={styles.subHeader}>
-            {config.profession.toUpperCase()}
-          </Text>
-        </View>
 
-        {/* Contacts */}
-        <Text style={styles.sectionHeader}>Contact Info</Text>
-        <View style={styles.section}>
-          <View style={{ width: "70%" }}>
-            <Text>
-              Email:{" "}
-              <Link src={"mailto:" + config.contacts.email}>
-                {config.contacts.email}
-              </Link>
-            </Text>
-            <Text>
-              Telephone:{" "}
-              <Link src={"tel:" + config.contacts.telephone}>
-                {config.contacts.telephone}
-              </Link>
-            </Text>
-            <Text>
-              Website:{" "}
-              <Link src={config.contacts.website}>
-                {config.contacts.website}
-              </Link>
-            </Text>
-            {social}
-            <View style={styles.spacer}></View>
-            <Text style={{ fontSize: 10 }}>
-              Generated with{" "}
-              <Link src={"https://github.com/daaanny90/JSON.resume"}>
-                JSON.Resume
-              </Link>
-            </Text>
-            <Text style={{ fontSize: 10 }}>
-              Revision: {process.env.REACT_APP_VERSION}
-            </Text>
-          </View>
-          <Image style={styles.profilePic} src={"/profile.jpg"} />
-        </View>
+        <Header name={config.name} profession={config.profession} />
 
-        {/* Summary */}
-        <Text style={styles.sectionHeader}>Summary</Text>
-        <Text>{config.summary}</Text>
+        <Section title="Contact Info">
+          <Contacts contacts={config.contacts} />
+        </Section>
 
-        {/* Experiences */}
-        <Text style={styles.sectionHeader}>Experiences</Text>
-        {experiences}
+        <Section title="Summary">
+          <Text>{config.summary}</Text>
+        </Section>
 
-        {/* Education */}
-        <Text style={styles.sectionHeader}>Education</Text>
-        {education}
+        <Section title="Experiences" wrap={false}>
+          <Experiences experiences={config.experiences} />
+        </Section>
 
-        {/* Skills */}
-        <Text style={styles.sectionHeader}>Skills</Text>
-        <View style={styles.section}>{tech_skills}</View>
+        <Section title="Education" wrap={false}>
+          <Education education={config.education} />
+        </Section>
 
-        {/* Side Projects */}
-        <Text style={styles.sectionHeader}>Side Projects</Text>
-        {side_projects}
+        <Section title="Skills" wrap={false}>
+          <TechSkills techSkills={config.tech_skills} />
+        </Section>
+
+        <Section title="Side Projects" wrap={false}>
+          <SideProjects sideProjects={config.side_projects} />
+        </Section>
 
         <Text
           style={styles.pageNumber}
@@ -204,29 +81,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     backgroundColor: "beige",
   },
-  topPage: {
-    fontSize: 12,
-    color: "grey",
-    textAlign: "center",
-    marginBottom: "10px",
-  },
-  headerContainer: {
-    border: "2px solid black",
-    paddingTop: "20px",
-    paddingBottom: "20px",
-    width: "380px",
-    margin: "0 auto",
-  },
-  header: {
-    fontSize: 28,
-    textAlign: "center",
-    marginBottom: "5px",
-    fontWeight: 700,
-  },
-  subHeader: {
-    fontSize: 14,
-    textAlign: "center",
-  },
   pageNumber: {
     position: "absolute",
     fontSize: 12,
@@ -236,34 +90,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "grey",
   },
-  sectionHeader: {
-    fontSize: 18,
-    fontWeight: 700,
-    padding: 5,
-    border: "2px solid black",
-    textAlign: "center",
-    marginTop: 15,
-    marginBottom: 15,
-  },
-  section: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-  },
-  profilePic: {
-    width: 150,
-    height: "auto",
-    border: "2px solid black",
-    padding: 5,
-  },
-  spacer: {
-    height: 10,
-    width: "100%",
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-  }
 });
 
 ReactPDF.render(<Resume />, document.getElementById("root"));
