@@ -1,4 +1,5 @@
 {
+  "lang": "",
   "revision": "",
   "name": "",
   "summary": "",
@@ -45,5 +46,16 @@
       "description": "",
       "url": ""
     }
-  ]
+  ],
+  "cover_letter": {
+    "title": "",
+    "text": "",
+    "place": "",
+    "date": "",
+    "company": {
+      "name": "",
+      "address": "",
+      "city": ""
+    }
+  }
 }

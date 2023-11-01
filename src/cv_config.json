@@ -1,0 +1,63 @@
+{
+  "lang": "en",
+  "revision": "1",
+  "name": "Danny Spina",
+  "summary": "Software Developer",
+  "profession": "Software Developer",
+  "contacts": {
+    "email": "asd",
+    "telephone": "asd",
+    "website": "asd",
+    "social": [
+      {
+        "social": "asd",
+        "username": "asd",
+        "url": "asd"
+      }
+    ]
+  },
+  "experiences": [
+    {
+      "title": "asd",
+      "type": "asd",
+      "company": "asd",
+      "from": "asd",
+      "to": "asd",
+      "summary": "asd"
+    }
+  ],
+  "education": [
+    {
+      "institute": "asd",
+      "from": "asd",
+      "to": "asd",
+      "title": "asd"
+    }
+  ],
+  "tech_skills": [
+    {
+      "type": "asd",
+      "skills": [
+        "asd"
+      ]
+    }
+  ],
+  "side_projects": [
+    {
+      "title": "asd",
+      "description": "asd",
+      "url": "asd"
+    }
+  ],
+  "cover_letter": {
+    "title": "Cover letter for the position of fullstack engineer at Google",
+    "text": "This is my cover letter",
+    "place": "Dresden",
+    "date": "1. November 2023",
+    "company": {
+      "name": "Schüttflix GmbH",
+      "address": "Kaiserstraße 24",
+      "city": "33330 Gütersloh"
+    }
+  }
+}

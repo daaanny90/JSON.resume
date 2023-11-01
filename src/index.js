@@ -11,6 +11,7 @@ import config from "./cv_config.json";
 
 import Header from "./components/Header";
 import Contacts from "./components/Contacts";
+import CompanyAddress from "./components/CompanyAddress";
 import Experiences from "./components/Experiences";
 import Education from "./components/Education";
 import Section from "./components/Section";
@@ -20,9 +21,26 @@ import TechSkills from "./components/TechSkills";
 import JetbrainsMonoRegular from "./fonts/JetBrainsMono-Regular.ttf";
 import JetbrainsMonoBold from "./fonts/JetBrainsMono-SemiBold.ttf";
 
+const hasCoverLetter = config.cover_letter.title !== ""
+const lang = config.lang
+
 const Resume = () => (
   <PDFViewer width="100%" height="1000px">
     <Document title={`${config.name} CV`} author={config.name}>
+      {hasCoverLetter ? (
+        <Page style={styles.body}>
+          <Text style={{ fontWeight: "bold", fontSize: 18 }}>{config.name}</Text>
+          <Text style={{ fontWeight: "bold", fontSize: 14, marginBottom: "10px" }}>{config.profession}</Text>
+
+          <Contacts style={{ marginBottom: "30px" }} contacts={config.contacts} hideJsonResume />
+          <CompanyAddress company={config.cover_letter.company} />
+
+          <Text style={{ marginTop: "50px", marginBottom: "20px", textAlign: "right" }}>{config.cover_letter.place}, {lang === "de" ? ("den") : ("")} {config.cover_letter.date}</Text>
+          <Text style={{ fontWeight: "bold" }}>{config.cover_letter.title}</Text>
+          <Text style={{ marginTop: "20px" }}>{config.cover_letter.text}</Text>
+          <Text style={{ marginTop: "20px" }}>{config.name}</Text>
+        </Page>
+      ) : undefined}
       <Page style={styles.body}>
 
         <Header name={config.name} profession={config.profession} />
@@ -90,6 +108,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "grey",
   },
+  cover_letter: {
+    fontWeight: "bold",
+    fontSize: 18
+  }
 });
 
 ReactPDF.render(<Resume />, document.getElementById("root"));

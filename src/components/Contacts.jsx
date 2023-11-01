@@ -2,7 +2,6 @@ import { View, Text, Link, StyleSheet, Image } from "@react-pdf/renderer";
 import Social from "./Social";
 
 const Contacts = (props) => {
-  console.log(styles);
   return (
     <View style={styles.section}>
       <View style={{ width: "70%" }}>
@@ -27,15 +26,18 @@ const Contacts = (props) => {
 
         <View style={styles.spacer}></View>
 
-        <Text style={{ fontSize: 10 }}>
-          Generated with{" "}
-          <Link src={"https://github.com/daaanny90/JSON.resume"}>
-            JSON.Resume
-          </Link>
-        </Text>
-        <Text style={{ fontSize: 10 }}>
-          Revision: {props.revision}
-        </Text>
+        {!props.hideJsonResume ? (
+          <Text style={{ fontSize: 10 }}>
+            Generated with
+            <Link src={"https://github.com/daaanny90/JSON.resume"}>
+              JSON.Resume
+            </Link>
+          </Text>
+        ) : undefined}
+
+        {props.revision ? (
+          <Text style={{ fontSize: 10 }}>Revision: {props.revision}</Text>
+        ) : undefined}
       </View>
       <Image style={styles.profilePic} src={"/profile.jpg"} />
     </View>
